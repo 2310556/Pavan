@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main() {
+    int choice = 1; // You need to define the 'choice' variable and set it to some value
+
+    switch (choice) {
+        case 1:
+            // Print numbers in a nested loop
+            for (size_t i = 0; i < 5; i++) {
+                printf(" >> %lu", i); // Changed '$lu' to '%lu'
+            }
+
+            for (size_t i = 5; i < 10; i++) {
+                printf(" [%lu] ", i); // Changed '[lu]' to '[%lu]'
+            }
+            break;
+
+        case 2:
+            // Print fruits from an array
+            char *fruits[] = {"Apple", "Mango", "Banana", "Lichy"};
+            fruits[3] = "Grapes"; // Corrected the assignment operator
+
+            for (size_t i = 0; i < 4; i++) {
+                printf("%s, ", fruits[i]); // Changed ', ' to '%s, '
+            }
+            break;
+
+        case 3:
+            // Print addresses of two variables
+            int test = 12; // Corrected the assignment operator
+            int test1 = 12;
+
+            printf("%p, ", (void*)&test); // Added type casting and corrected the format specifier
+            printf("%p", (void*)&test1);
+            break;
+
+        default:
+            printf("Invalid choice\n");
+    }
+
+    return 0;
+}
